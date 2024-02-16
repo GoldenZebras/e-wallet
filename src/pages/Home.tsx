@@ -1,7 +1,20 @@
-import React from "react";
+import Card from '../components/card/Card';
+import { CardList } from '../constants/CardList';
 
 const HomeComponent = () => {
-  return <div>HomeComponent</div>;
+  return (
+    <div>
+      {CardList.map((card, index) => (
+        <Card
+          key={index}
+          cardNumber={card.cardNumber}
+          cardHolder={card.cardHolder}
+          expirationDate={card.expirationDate}
+          vendor={card.vendor}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default HomeComponent;
