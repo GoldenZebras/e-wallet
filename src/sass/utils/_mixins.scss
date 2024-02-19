@@ -1,0 +1,77 @@
+@import "../utils/variables";
+
+@mixin container {
+  background-color: $main-color;
+  width: 25.875rem;
+  height: 896rem;
+  margin: auto;
+}
+
+@mixin center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+//titel på home och addcard page
+@mixin top-title {
+  color: $secondary-color;
+  font-family: $font-family-secondary;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.188rem;
+  text-transform: uppercase;
+  margin: 0.5rem auto 2rem;
+  text-align: center;
+  line-height: 100%;
+}
+
+//under text på home och addcard page
+@mixin top-text {
+  color: $top-text-color;
+  font-family: $font-family-secondary;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 15px;
+  text-align: center;
+}
+
+//texten på korten
+@mixin card-content {
+  font-family: $font-family-primary;
+  width: 23.875rem;
+  height: 15.063rem;
+  border-radius: 0.5rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+//button på home page
+@mixin button-home {
+  background: $main-color;
+  color: $secondary-color;
+  width: 23.875rem;
+  height: 5rem;
+  border: 1px solid $secondary-color;
+  border-radius: 0.5rem;
+  font-family: $font-family-primary;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.563rem;
+}
+
+//button på addCard page
+@mixin add-new-card-button {
+  background: $secondary-color;
+  color: $main-color;
+  width: 23.875rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  font-family: $font-family-primary;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.563rem;
+}
