@@ -22,7 +22,7 @@ const Form = () => {
             </article>
 
             <label className='form-subtitles'>Vendor</label>
-            <select className='input'>
+            <select className='input select-element'>
                 <option value="bitcon-inc">Bitcon inc</option>
                 <option value="ninja-bank">Ninja bank</option>
                 <option value="block-chain-in">Block chain in</option>

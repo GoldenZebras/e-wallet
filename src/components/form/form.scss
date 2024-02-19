@@ -10,6 +10,9 @@
 .input {
     @include input-layout;
 }
+.select-element {
+    cursor: pointer;
+}
 .padding {
     padding-top: 2rem;
 }
