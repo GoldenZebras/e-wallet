@@ -11,6 +11,7 @@ const HomeComponent = () => {
           cardHolder={card.cardHolder}
           expirationDate={card.expirationDate}
           vendor={card.vendor}
+          activeCard={card.activeCard}
         />
       ))}
     </div>
