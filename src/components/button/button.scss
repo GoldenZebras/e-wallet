@@ -1,0 +1,12 @@
+@use '../../sass' as *;
+
+.card__addButton {
+    @include button;
+
+    &.filled {
+        @include filled;
+    }
+    &.outlined {
+        @include outlined;
+    }
+}

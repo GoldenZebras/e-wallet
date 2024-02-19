@@ -49,24 +49,21 @@
   font-style: normal;
 }
 
-//button på home page
-@mixin button-home {
+//outlined style på button
+@mixin outlined {
   background: $main-color;
   color: $secondary-color;
-  width: 23.875rem;
-  height: 5rem;
-  border: 1px solid $secondary-color;
-  border-radius: 0.5rem;
-  font-family: $font-family-primary;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.563rem;
 }
 
-//button på addCard page
-@mixin add-new-card-button {
+//filled style på button
+@mixin filled {
   background: $secondary-color;
-  color: $main-color;
+  color: $main-color; 
+}
+
+//styling för knappar
+@mixin button{
+  cursor: pointer;
   width: 23.875rem;
   height: 5rem;
   border-radius: 0.5rem;
@@ -74,6 +71,7 @@
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.563rem;
+  font-size: 1.375rem;
 }
 
 // titlar på formuläret

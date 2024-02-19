@@ -1,0 +1,5 @@
+@use '../sass' as *;
+
+.card__container--header{
+    @include top-title;
+}
