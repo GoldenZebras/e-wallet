@@ -10,8 +10,10 @@
 .input {
     @include input-layout;
 }
-
-.test {
+.padding {
+    padding-top: 2rem;
+}
+.valid-ccv {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
 }

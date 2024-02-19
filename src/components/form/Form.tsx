@@ -1,3 +1,4 @@
+import Button from '../button/Button';
 import './form.scss';
 
 const Form = () => {
@@ -9,7 +10,7 @@ const Form = () => {
             <label className='form-subtitles'>Cardholder name</label>
             <input type='text' placeholder='FIRSTNAME LASTNAME' className='input'/>
 
-            <article className='test'>
+            <article className='valid-ccv'>
                 <div className='form-subtitles'>
                     <label>Valid thru</label><br></br>
                     <input type='text' className='input'/>
@@ -27,6 +28,10 @@ const Form = () => {
                 <option value="block-chain-in">Block chain in</option>
                 <option value="evil-corp">Evil corp</option>
             </select>
+
+            <div className='padding'>
+                <Button title={'Add card'} filled={true} />
+            </div>
 
         </section>
     )
