@@ -9,14 +9,32 @@
 }
 .input {
     @include input-layout;
+
 }
 .select-element {
     cursor: pointer;
+    font-family: $font-family-primary;
+    font-size: .8rem;
+    text-transform: uppercase;
+    & > * {
+        @include form-subtitles;
+    }
 }
-.padding {
-    padding-top: 2rem;
+.form-errors {
+    height: 3rem;
+    @include center;
+    justify-content: center;
+    font-family: $font-family-primary;
+    color: $error-color
 }
 .valid-ccv {
     display: flex;
     gap: 3rem;
+}
+.option{
+    padding: 1rem 0;
+}
+
+.bitcoin {
+    background: url(../../assets/bitcoin-logo.png);
 }
