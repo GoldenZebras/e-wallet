@@ -1,0 +1,17 @@
+@use '../../sass/' as *;
+
+.form-subtitles {
+    @include form-subtitles;
+}
+
+.form {
+    @include form-layout;
+}
+.input {
+    @include input-layout;
+}
+
+.test {
+    display: flex;
+    gap: 1rem;
+}
