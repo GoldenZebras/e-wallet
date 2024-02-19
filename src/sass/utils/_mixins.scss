@@ -80,3 +80,25 @@
   line-height: 1.563rem;
   font-size: 1.375rem;
 }
+
+// titlar på formuläret
+@mixin form-subtitles {
+  color: $secondary-color;
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-family: $font-family-primary;
+  padding: 1rem 0 .2rem 0;
+}
+
+@mixin form-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin input-layout {
+  border-radius: 8px;
+  color: $secondary-color;
+  opacity: 80%;
+  border: 1px solid $secondary-color;
+  padding: .8rem;
+}

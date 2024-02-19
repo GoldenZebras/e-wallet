@@ -1,0 +1,22 @@
+@use '../../sass/' as *;
+
+.form-subtitles {
+    @include form-subtitles;
+}
+
+.form {
+    @include form-layout;
+}
+.input {
+    @include input-layout;
+}
+.select-element {
+    cursor: pointer;
+}
+.padding {
+    padding-top: 2rem;
+}
+.valid-ccv {
+    display: flex;
+    gap: 3rem;
+}

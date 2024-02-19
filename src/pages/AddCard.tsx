@@ -1,4 +1,5 @@
 import './addCard.scss';
+import Form from "../components/form/Form";
 
 const AddCard = () => {
   return (
@@ -8,6 +9,8 @@ const AddCard = () => {
       <p className="new-card-title">New card</p>
 
       {/* <Card /> */}
+      
+      <Form />
     </main>
   );
 };
