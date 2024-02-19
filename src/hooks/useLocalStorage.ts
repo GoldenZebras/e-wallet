@@ -22,31 +22,36 @@ const useLocalStorage = (key: string, initialValue: CardProps[]) => {
 
   const addCard = (card: CardProps) => {
     setValue((prevValue) => {
+      const cardExists = prevValue.some((c) => c.cardNumber === card.cardNumber);
+      if (cardExists) {
+        prompt(`Card with card number ${card.cardNumber} already exists.`);
+        return prevValue;
+      }
       const updatedValue = [...prevValue, card];
       localStorage.setItem(key, JSON.stringify(updatedValue));
       return updatedValue;
     });
   };
 
-  const removeCard = (index: number) => {
-    // gör att denna tar bort active card och inte något annat.
-    //uppdatera värdet på cardsarray etc
-    // setValue((prevValue) => {
-    //   const updatedValue = [...prevValue];
-    //   updatedValue.splice(index, 1);
-    //   localStorage.setItem(key, JSON.stringify(updatedValue));
-    //   return updatedValue;
-    // });
+  const removeCard = () => {
+    setValue((prevValue) => {
+      const updatedValue = prevValue.filter((card) => !card.active);
+      localStorage.setItem(key, JSON.stringify(updatedValue));
+      return updatedValue;
+    });
+    setActiveCard(undefined);
+    setInactiveCards(value.filter((card) => !card.active));
   };
 
-  const setActiveCardFunc = (index: number) => {
+  const setActiveCardFunc = (cardNumber: string) => {
     setValue((prevValue) => {
-      const updatedValue = prevValue.map((card, i) => ({
+      const updatedValue = prevValue.map((card) => ({
         ...card,
-        active: i === index,
+        active: cardNumber === card.cardNumber,
       }));
       const newActiveCard = updatedValue.find((card) => card.active);
       const newInactiveCards = updatedValue.filter((card) => !card.active);
+
       setActiveCard(newActiveCard);
       setInactiveCards(newInactiveCards);
       localStorage.setItem(key, JSON.stringify(updatedValue));
@@ -54,7 +59,7 @@ const useLocalStorage = (key: string, initialValue: CardProps[]) => {
     });
   };
 
-  return { value, setValue, removeCard, addCard, setActiveCardFunc, activeCard, inactiveCards };
+  return { removeCard, addCard, setActiveCardFunc, activeCard, inactiveCards };
 };
 
 export default useLocalStorage;
