@@ -1,0 +1,24 @@
+$main-color: #ffffff;
+$secondary-color: #000000;
+$bitcoin-color: linear-gradient(0deg, #ffae34, #ffae34),
+  linear-gradient(
+    248.04deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 99.07%
+  );
+$ninja-vendor-color: linear-gradient(0deg, #222222, #222222),
+  linear-gradient(
+    248.3deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+$block-chain-inc-color: linear-gradient(0deg, #8b58f9, #8b58f9),
+  linear-gradient(248.52deg, rgba(0, 0, 0, 0.15) 1.49%, rgba(0, 0, 0, 0) 100%);
+$evil-corp-color: linear-gradient(0deg, #f33355, #f33355),
+  linear-gradient(248.3deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%);
+$add-new-bank-card-color: #d0d0d0; //namnförslag? kortet på /AddCard pagen
+
+$top-text-color: #22222299;
+
+$font-family-primary: "PT Sans", sans-serif;
+$font-family-secondary: "Source Sans Pro", sans-serif;
