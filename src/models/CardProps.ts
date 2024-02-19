@@ -4,4 +4,5 @@ export interface CardProps {
   expirationDate: string;
   vendor: string;
   active: boolean;
+  isPlaceHolder?: boolean;
 }
