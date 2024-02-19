@@ -1,4 +1,3 @@
-import React from "react";
 import './addCard.scss';
 import Form from "../components/form/Form";
 
@@ -8,11 +7,10 @@ const AddCard = () => {
       <div className="title">Add a new bank card</div>
 
       <p className="new-card-title">New card</p>
-      
+
       {/* <Card /> */}
-
+      
       <Form />
-
     </main>
   );
 };
