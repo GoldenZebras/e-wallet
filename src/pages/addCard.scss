@@ -1,0 +1,20 @@
+.main-add-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 414px;
+    height: 896px;
+    background-color: #dedede;
+}
+.title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding: 2rem 5rem 1rem 5rem;
+    text-align: center;
+}
+.new-card-title {
+    text-transform: uppercase;
+    color: #222;
+    opacity: 60%;
+    font-size: .8rem;
+}
