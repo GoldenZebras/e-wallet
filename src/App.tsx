@@ -1,4 +1,4 @@
-import './sass/index.scss';
+import './sass/_index.scss';
 
 import './App.css';
 import Home from './pages/Home';

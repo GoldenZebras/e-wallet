@@ -1,0 +1,12 @@
+@use '../sass' as *;
+
+.main-add-cards {
+    @include container;
+    @include center;
+}
+.title {
+    @include top-title;
+}
+.new-card-title {
+    @include top-text;
+}
