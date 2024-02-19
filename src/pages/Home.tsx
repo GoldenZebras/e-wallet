@@ -4,6 +4,7 @@ import useLocalStorage from '../hooks/useLocalStorage';
 import { STORAGE_KEY } from '../constants/StorageKey';
 import { CardProps } from '../models/CardProps';
 import Button from '../components/button/Button';
+import './home.scss';
 
 const Home = () => {
   const { removeCard, setActiveCardFunc, activeCard, inactiveCards } = useLocalStorage(
