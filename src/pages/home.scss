@@ -33,20 +33,14 @@
         }
     }
 
+    &--activeCard {
+        margin-bottom: 40px;
+        font-family: $font-family-primary;
+    }
+
     &--list {
         padding-top: 192px;
         margin-bottom: 43px;
     }
 
-    &--activeCard {
-        margin-bottom: 40px;
-    }
-
-}
-.card__container--header{
-    @include top-title;
-}
-
-.card__container--activeCard {
-    @include top-text;
 }
