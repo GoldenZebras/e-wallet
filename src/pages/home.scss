@@ -1,6 +1,5 @@
 @use '../sass' as *;
 
-
 .card__container {
     @include container;
     // @include center;
@@ -43,4 +42,11 @@
         margin-bottom: 40px;
     }
 
+}
+.card__container--header{
+    @include top-title;
+}
+
+.card__container--activeCard {
+    @include top-text;
 }
