@@ -15,39 +15,43 @@ const Home = () => {
   return (
     <div className="card__container">
       <h1 className="card__container--header">E-wallet</h1>
+      <h2 className="card__container--subheader">
+        active card{' '}
+        {activeCard ? (
+          <button className="card__container--button" onClick={removeCard}>
+            Remove card
+          </button>
+        ) : null}
+      </h2>
       <div className="card__container--activeCard">
-        <h2 className="card__container--activeCard header">active card</h2>
-        <div>
-          {activeCard ? (
-            <>
-              <button>remove</button>
-              <Card
-                cardNumber={activeCard.cardNumber}
-                cardHolder={activeCard.cardHolder}
-                expirationDate={activeCard.expirationDate}
-                vendor={activeCard.vendor}
-                active={activeCard.active}
-              />
-            </>
-          ) : (
-            <p>No active card.</p>
-          )}
-        </div>
-      </div>
-      {inactiveCards?.map((card: CardProps, index: number) => (
-        <div
-          key={index}
-          className={`card__container--item ${card.active ? 'active' : ''}`}
-          onClick={() => setActiveCardFunc(index)}>
+        {activeCard ? (
           <Card
-            cardNumber={card.cardNumber}
-            cardHolder={card.cardHolder}
-            expirationDate={card.expirationDate}
-            vendor={card.vendor}
-            active={card.active}
+            cardNumber={activeCard.cardNumber}
+            cardHolder={activeCard.cardHolder}
+            expirationDate={activeCard.expirationDate}
+            vendor={activeCard.vendor}
+            active={activeCard.active}
           />
-        </div>
-      ))}
+        ) : (
+          <p>No active card.</p>
+        )}
+      </div>
+      <div className="card__container--list">
+        {inactiveCards?.map((card: CardProps, index: number) => (
+          <div
+            key={index}
+            className={`card__container--item ${card.active ? 'active' : ''}`}
+            onClick={() => setActiveCardFunc(card.cardNumber)}>
+            <Card
+              cardNumber={card.cardNumber}
+              cardHolder={card.cardHolder}
+              expirationDate={card.expirationDate}
+              vendor={card.vendor}
+              active={card.active}
+            />
+          </div>
+        ))}
+      </div>
       <Button title={'Add new card'} filled={false} to={'/addcard'} />
     </div>
   );

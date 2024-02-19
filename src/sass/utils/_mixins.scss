@@ -22,9 +22,12 @@
   font-weight: 700;
   font-size: 2.188rem;
   text-transform: uppercase;
-  margin: 0.5rem auto 2rem;
+  margin: 0.5rem auto;
   text-align: center;
   line-height: 100%;
+  height: 6.125rem;
+  width: 19rem;
+  @include center;
 }
 
 //under text på home och addcard page
@@ -37,6 +40,10 @@
   text-transform: uppercase;
   line-height: 15px;
   text-align: center;
+  height: 1.625rem;
+  width: 19rem;
+  margin-bottom: 0.25rem;
+  @include center;
 }
 
 //texten på korten
