@@ -1,10 +1,10 @@
 import Card from '../components/card/Card';
 import { CardList } from '../constants/CardList';
-import useLocalStorage from '../sass/useLocalStorage';
+import useLocalStorage from '../hooks/useLocalStorage';
 import { STORAGE_KEY } from '../constants/StorageKey';
 import { CardProps } from '../models/CardProps';
 
-const HomeComponent = () => {
+const Home = () => {
   const { value, removeCard, setActiveCard } = useLocalStorage(STORAGE_KEY, CardList);
 
   return (
@@ -28,4 +28,4 @@ const HomeComponent = () => {
   );
 };
 
-export default HomeComponent;
+export default Home;
