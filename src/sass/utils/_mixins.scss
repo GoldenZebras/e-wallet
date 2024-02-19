@@ -10,7 +10,6 @@
 @mixin center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -98,6 +97,7 @@
 @mixin input-layout {
   border-radius: 8px;
   color: $secondary-color;
+  text-transform: uppercase;
   opacity: 80%;
   border: 1px solid $secondary-color;
   padding: .8rem;

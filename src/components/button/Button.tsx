@@ -5,13 +5,14 @@ import { useNavigate } from 'react-router-dom';
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   title: string;
   filled: boolean;
-  to: string;
+  to?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ title, filled, to }) => {
   const navigate = useNavigate();
+
   const navigateToDestination = () => {
-    navigate(to);
+    to != undefined && navigate(to);
   };
   return (
     <button

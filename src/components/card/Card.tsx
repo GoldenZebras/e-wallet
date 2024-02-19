@@ -8,7 +8,7 @@ const Card: React.FC<CardProps> = ({ cardHolder, cardNumber, expirationDate, ven
       <div className="card__number">{cardNumber}</div>
       <div className="card__holder">{cardHolder}</div>
       <div className="card__expiry">{expirationDate}</div>
-      <figure className={`card__vendor ${vendor}`}></figure>
+      <figure className={`card__vendor ${vendor}`}>{vendor}</figure>
     </div>
   );
 };
