@@ -3,5 +3,5 @@ export interface CardProps {
   cardHolder: string;
   expirationDate: string;
   vendor: string;
-  active: boolean;
+  active?: boolean;
 }
