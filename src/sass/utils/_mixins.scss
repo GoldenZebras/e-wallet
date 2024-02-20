@@ -121,7 +121,7 @@
 
 @mixin card-number {
   font-family: $font-family-primary;
-  font-size: 29px;
+  font-size: 25px;
   line-height: 32.48px;
   letter-spacing: 2px;
   position: absolute;
@@ -155,6 +155,17 @@
   top: 20px;
   width: 27.6px;
   height: 38.68px;
+  background-image: url(#{$image-url});
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@mixin card-emv($image-url) {
+  position: absolute;
+  left: 28px;
+  top: 15px;
+  width: 50px;
+  height: 84px;
   background-image: url(#{$image-url});
   background-size: contain;
   background-repeat: no-repeat;
