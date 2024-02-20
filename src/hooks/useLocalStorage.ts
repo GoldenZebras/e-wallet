@@ -21,15 +21,17 @@ const useLocalStorage = (key: string, initialValue: CardProps[]) => {
   }, [value]);
 
   const addCard = (card: CardProps) => {
-    console.log('card', card);
     setValue((prevValue) => {
-      const cardExists = prevValue.some((c) => c.cardNumber == card.cardNumber);
+      const cardExists = prevValue.some((c) => c.cardNumber === card.cardNumber);
       if (cardExists) {
         alert(`Card with card number ${card.cardNumber} already exists.`);
         return prevValue;
       }
-      const updatedValue = [...prevValue, card];
-      return updatedValue;
+      const updatedValue = prevValue.map((c) => ({ ...c, active: false }));
+      const newActiveCard = card;
+      setActiveCard(newActiveCard);
+      setInactiveCards(updatedValue);
+      return [...updatedValue, newActiveCard];
     });
   };
 
