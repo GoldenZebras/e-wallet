@@ -1,42 +1,38 @@
-@use '../../sass/' as *;
+@use "../../sass/" as *;
 
 .form-subtitles {
-    @include form-subtitles;
+  @include form-subtitles;
 }
 
 .form {
-    @include form-layout;
+  @include form-layout;
 }
 .input {
-    @include input-layout;
+  @include input-layout;
 }
 .select-element {
-    cursor: pointer;
-    font-family: $font-family-primary;
-    font-size: .8rem;
-    text-transform: uppercase;
-    & > * {
-        @include form-subtitles;
-    }
+  cursor: pointer;
+  font-family: $font-family-primary;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  & > * {
+    @include form-subtitles;
+  }
 }
 .form-errors {
-    height: 3rem;
-    @include center;
-    justify-content: center;
-    font-family: $font-family-primary;
-    color: $error-color
+  height: 3rem;
+  @include center;
+  justify-content: center;
+  font-family: $font-family-primary;
+  color: $error-color;
 }
 .valid-ccv {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 .v-c {
-    width: 11.5rem;
+  width: 11.5rem;
 }
-.option{
-    padding: 1rem 0;
-}
-
-.bitcoin {
-    background: url(../../assets/bitcoin-logo.png);
+.option {
+  padding: 1rem 0;
 }
