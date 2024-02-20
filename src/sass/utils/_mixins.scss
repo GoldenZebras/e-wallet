@@ -149,9 +149,13 @@
   right: 25px;
 }
 
-@mixin card-vendor {
+@mixin card-vendor($image-url) {
   position: absolute;
   right: 20px;
   top: 20px;
-  background-image: url(../../assets/bitcoin-logo.png);
+  width: 27.6px;
+  height: 38.68px;
+  background-image: url(#{$image-url});
+  background-size: contain;
+  background-repeat: no-repeat;
 }

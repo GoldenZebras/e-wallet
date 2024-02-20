@@ -12,7 +12,11 @@
 }
 .select-element {
   cursor: pointer;
+
   font-family: $font-family-secondary;
+
+  font-family: $font-family-primary;
+
   font-size: 0.8rem;
   text-transform: uppercase;
   & > * {
@@ -23,6 +27,7 @@
   height: 3rem;
   @include center;
   justify-content: center;
+
   font-family: $font-family-secondary;
   color: $error-color;
 }
@@ -37,6 +42,3 @@
   padding: 1rem 0;
 }
 
-.bitcoin {
-  background: url(../../assets/bitcoin-logo.png);
-}
