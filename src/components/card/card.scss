@@ -29,30 +29,35 @@
   }
 
   &__holder {
-    font-size: 24px;
-    font-weight: 500;
+    @include card-holder;
   }
   &__holder::before {
     content: "CARDHOLDER NAME";
     display: block;
     font-size: 12px;
     color: #000000;
-    margin-bottom: 8px;
+    margin-bottom: 3px;
+  }
+
+  &__expiry {
+    @include card-expiry;
   }
   &__expiry::before {
     content: "VALID THRU";
     display: block;
     font-size: 12px;
     color: #000000;
-    margin-bottom: 8px;
+    margin-bottom: 3px;
+    margin-left: -18px;
   }
 
   &__vendor {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.8);
+    @include card-vendor;
   }
+
   &.bitcoin {
-    background-image: url("../../assets/bitcoin-logo.png");
-    background-size: 100px;
+    &__vendor {
+      background: url(../../assets/bitcoin-logo.png) no-repeat;
+    }
   }
 }

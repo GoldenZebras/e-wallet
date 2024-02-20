@@ -116,12 +116,37 @@
 }
 
 @mixin card-number {
+  font-family: $font-family-primary;
   font-size: 29px;
   line-height: 32.48px;
+  letter-spacing: 2px;
   position: absolute;
-  height: 42px;
-  width: 350px;
   top: 120px;
-  left: 16px;
-  @include center;
+  left: 24px;
+}
+
+@mixin card-holder {
+  font-family: $font-family-primary;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  top: 180px;
+  left: 25px;
+  text-transform: uppercase;
+}
+
+@mixin card-expiry {
+  font-family: $font-family-primary;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  top: 180px;
+  right: 25px;
+}
+
+@mixin card-vendor {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-image: url(../../assets/bitcoin-logo.png);
 }
