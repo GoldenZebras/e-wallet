@@ -3,6 +3,9 @@
 .main-add-cards {
     @include container;
     @include center;
+
+    border: 1px solid black;
+    position: relative
 }
 .title {
     @include top-title;

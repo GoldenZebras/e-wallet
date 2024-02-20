@@ -81,7 +81,7 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
           <br></br>
           <input
             type="text"
-            className="input"
+            className="input v-c"
             placeholder="MM/YY"
             value={formData.valid}
             name="valid"
@@ -96,7 +96,7 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
             type="text"
             maxLength={3}
             value={formData.ccv}
-            className="input"
+            className="input v-c"
             name="ccv"
             onChange={(e) => handleChange(e)}
           />
