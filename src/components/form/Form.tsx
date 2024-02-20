@@ -20,9 +20,10 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     const isValid = validator();
     if (isValid) {
-      addCard({
+      const success = addCard({
         cardNumber: formData.cardNumber,
         cardHolder: formData.name,
         expirationDate: formData.valid,
@@ -30,9 +31,7 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
         active: true,
       });
 
-      // lägga till så att man inte blir navigerad om kortet inte läggs till
-
-      setTimeout(() => navigate('/'), 750);
+      if (success) setTimeout(() => navigate('/'), 750);
     }
   };
 
