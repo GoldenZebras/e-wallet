@@ -20,10 +20,6 @@
     @include card-background($evil-corp-color);
   }
 
-  &.inactive {
-    margin-top: -192px;
-  }
-
   &__number {
     @include card-number;
   }

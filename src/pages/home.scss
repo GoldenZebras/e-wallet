@@ -1,3 +1,5 @@
+@use '../sass' as *;
+
 .card__container {
     position: relative;
     @include container;
@@ -32,30 +34,40 @@
 
     &--activeCard {
         margin-bottom: 40px;
+        height: 15.063rem;
         font-family: $font-family-primary;
     }
 
     &--list {
-        padding-top: 192px;
+        $listHeight: 21.25rem;
         border-radius: 0.5rem 0.5rem 0 0;
+        height: $listHeight;
+        width: 25.875rem;
         overflow-y: hidden; 
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
+    
 
-            & > * {
-                position: absolute;
-                flex-shrink: 0;
-                margin-top: 10px;
+        @for $cards from 1 through 10 {
+            &-item-#{$cards} {
+                $totalMargin: if($cards > 1, ($listHeight - 15.063rem * $cards) / ($cards - 1), 0);
+    
+                
+                    flex-shrink: 0;
+                    @for $n from 1 through $cards {
+                        &:nth-child(#{$n}) {
+                            margin-top: if($n == 1, 0, $totalMargin);
+                        }
+                    }
             }
         }
     }
+}
 
 
 .card__addButton {
     position: absolute;
     bottom: 1.0625rem;
-    // margin-top: auto;
-    // margin-bottom: 6px;
 }
