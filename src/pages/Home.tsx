@@ -11,6 +11,7 @@ const Home = () => {
     STORAGE_KEY,
     CardList
   );
+  console.log('inactiveCards.length', inactiveCards.length);
 
   return (
     <div className="card__container">
@@ -40,7 +41,7 @@ const Home = () => {
         {inactiveCards?.map((card: CardProps, index: number) => (
           <div
             key={index}
-            className={`card__container--item ${card.active ? 'active' : ''}`}
+            className={`card__container--list-item-${inactiveCards.length}`}
             onClick={() => setActiveCardFunc(card.cardNumber)}>
             <Card
               cardNumber={card.cardNumber}
@@ -52,7 +53,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <Button title={'Add new card'} filled={false} to={'/addcard'} />
+      <Button className="addbutton" title={'Add new card'} filled={false} to={'/addcard'} />
     </div>
   );
 };
