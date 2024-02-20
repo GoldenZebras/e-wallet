@@ -17,7 +17,8 @@
     &--button {
         position: absolute;
         font-family: $font-family-secondary;
-        right: 0;
+        right: -1.25rem;
+        top: -0.25rem;
         background: none;
         color: $top-text-color;
         border: 1px solid $top-text-color;

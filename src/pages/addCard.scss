@@ -12,3 +12,17 @@
 .new-card-title {
     @include top-text;
 }
+
+.back-btn {
+    position:absolute;
+    left: 2px;
+    top: 2px;
+    height: 3rem;
+    width: 4rem;
+    transition: 0.1s;
+    cursor: pointer;
+
+    &:hover {
+        scale: 1.1;
+    }
+}

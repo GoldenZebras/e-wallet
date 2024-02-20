@@ -16,6 +16,7 @@ const Home = () => {
     <div className="card__container">
       <h1 className="card__container--header">E-wallet</h1>
       <h2 className="card__container--subheader">
+        Active card
         {activeCard ? (
           <button className="card__container--button" onClick={removeCard}>
             Remove card
