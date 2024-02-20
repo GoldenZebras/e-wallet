@@ -57,6 +57,7 @@ const useFormValidator = (): [
       return 'Valid Thru is required';
     } else {
       const [month, year] = formData.valid.split('/');
+
       if (Number(month) > 12) {
         return 'Month cannot be higher than 12';
       } else if (Number(year) < 24) {
