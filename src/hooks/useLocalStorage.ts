@@ -29,7 +29,6 @@ const useLocalStorage = (key: string, initialValue: CardProps[]) => {
         return prevValue;
       }
       const updatedValue = [...prevValue, card];
-      localStorage.setItem(key, JSON.stringify(updatedValue));
       return updatedValue;
     });
   };
@@ -37,7 +36,6 @@ const useLocalStorage = (key: string, initialValue: CardProps[]) => {
   const removeCard = () => {
     setValue((prevValue) => {
       const updatedValue = prevValue.filter((card) => !card.active);
-      localStorage.setItem(key, JSON.stringify(updatedValue));
       return updatedValue;
     });
     setActiveCard(undefined);
@@ -55,7 +53,6 @@ const useLocalStorage = (key: string, initialValue: CardProps[]) => {
 
       setActiveCard(newActiveCard);
       setInactiveCards(newInactiveCards);
-      localStorage.setItem(key, JSON.stringify(updatedValue));
       return updatedValue;
     });
   };
