@@ -5,6 +5,10 @@
   background: $add-new-bank-card-color;
   color: $main-color;
 
+  .card__emv {
+    @include card-emv($emv-chip-dark);
+  }
+
   &.bitcoin {
     @include card-background($bitcoin-color);
 
@@ -17,6 +21,9 @@
 
   &.ninja {
     @include card-background($ninja-vendor-color);
+    .card__emv {
+      @include card-emv($emv-chip-light);
+    }
 
     .card__vendor {
       @include card-vendor("../../assets/ninja-bank-logo.png");
@@ -25,7 +32,9 @@
 
   &.blockchain {
     @include card-background($block-chain-inc-color);
-
+    .card__emv {
+      @include card-emv($emv-chip-light);
+    }
     .card__vendor {
       @include card-vendor("../../assets/block-chain-logo.png");
     }
@@ -33,7 +42,9 @@
 
   &.evilcorp {
     @include card-background($evil-corp-color);
-
+    .card__emv {
+      @include card-emv($emv-chip-light);
+    }
     .card__vendor {
       @include card-vendor("../../assets/evil-corp-logo.png");
     }
