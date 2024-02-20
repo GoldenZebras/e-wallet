@@ -45,7 +45,7 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
         cardHolder: formData.name,
         expirationDate: formData.valid,
         vendor: formData.vendor,
-        active: false,
+        active: true,
       });
 
       setTimeout(() => navigate('/'), 750);

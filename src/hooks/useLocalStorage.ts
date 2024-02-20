@@ -28,7 +28,7 @@ const useLocalStorage = (key: string, initialValue: CardProps[]) => {
         return prevValue;
       }
       const updatedValue = prevValue.map((c) => ({ ...c, active: false }));
-      const newActiveCard = { ...card, active: true };
+      const newActiveCard = card;
       setActiveCard(newActiveCard);
       setInactiveCards(updatedValue);
       return [...updatedValue, newActiveCard];
