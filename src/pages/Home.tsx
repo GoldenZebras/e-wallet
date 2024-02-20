@@ -52,7 +52,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <Button title={'Add new card'} filled={false} to={'/addcard'} />
+      <Button className="addbutton" title={'Add new card'} filled={false} to={'/addcard'} />
     </div>
   );
 };
