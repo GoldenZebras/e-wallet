@@ -9,7 +9,6 @@
 }
 .input {
     @include input-layout;
-
 }
 .select-element {
     cursor: pointer;
@@ -29,7 +28,10 @@
 }
 .valid-ccv {
     display: flex;
-    gap: 3rem;
+    gap: 1rem;
+}
+.v-c {
+    width: 11.5rem;
 }
 .option{
     padding: 1rem 0;
