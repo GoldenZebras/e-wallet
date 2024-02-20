@@ -12,7 +12,11 @@
 }
 .select-element {
   cursor: pointer;
+
+  font-family: $font-family-secondary;
+
   font-family: $font-family-primary;
+
   font-size: 0.8rem;
   text-transform: uppercase;
   & > * {
@@ -23,7 +27,8 @@
   height: 3rem;
   @include center;
   justify-content: center;
-  font-family: $font-family-primary;
+
+  font-family: $font-family-secondary;
   color: $error-color;
 }
 .valid-ccv {
@@ -36,3 +41,4 @@
 .option {
   padding: 1rem 0;
 }
+
