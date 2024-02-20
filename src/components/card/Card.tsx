@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({
       <div className="card__number">{formatCardNumber(cardNumber)}</div>
       <div className="card__holder">{cardHolder}</div>
       <div className="card__expiry">{expirationDate}</div>
-      <figure className={`card__vendor ${vendor}`}>{vendor}</figure>
+      <figure className={`card__vendor ${vendor}`}></figure>
     </div>
   );
 };

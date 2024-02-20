@@ -6,22 +6,34 @@
 
   &.bitcoin {
     @include card-background($bitcoin-color);
+
+    .card__vendor {
+      @include card-vendor("../../assets/bitcoin-logo.png");
+    }
   }
 
   &.ninja {
     @include card-background($ninja-vendor-color);
+
+    .card__vendor {
+      @include card-vendor("../../assets/ninja-bank-logo.png");
+    }
   }
 
   &.blockchain {
     @include card-background($block-chain-inc-color);
+
+    .card__vendor {
+      @include card-vendor("../../assets/block-chain-logo.png");
+    }
   }
 
   &.evilcorp {
     @include card-background($evil-corp-color);
-  }
 
-  &.inactive {
-    margin-top: -192px;
+    .card__vendor {
+      @include card-vendor("../../assets/evil-corp-logo.png");
+    }
   }
 
   &__number {
@@ -49,15 +61,5 @@
     color: #000000;
     margin-bottom: 3px;
     margin-left: -18px;
-  }
-
-  &__vendor {
-    @include card-vendor;
-  }
-
-  &.bitcoin {
-    &__vendor {
-      background: url(../../assets/bitcoin-logo.png) no-repeat;
-    }
   }
 }

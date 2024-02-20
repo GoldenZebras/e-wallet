@@ -17,9 +17,14 @@ $block-chain-inc-color: linear-gradient(0deg, #8b58f9, #8b58f9),
   linear-gradient(248.52deg, rgba(0, 0, 0, 0.15) 1.49%, rgba(0, 0, 0, 0) 100%);
 $evil-corp-color: linear-gradient(0deg, #f33355, #f33355),
   linear-gradient(248.3deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%);
-$add-new-bank-card-color: #d0d0d0; //namnförslag? kortet på /AddCard pagen
+$add-new-bank-card-color: #d0d0d0;
 
 $top-text-color: #22222299;
 
 $font-family-primary: "PT Sans", sans-serif;
 $font-family-secondary: "Source Sans Pro", sans-serif;
+
+$bitcoin-logo: url("../../assets/bitcoin-logo.png");
+$evil-corp-logo: url("../../assets/evil-corp-logo.png");
+$block-chain-logo: url("../../assets/block-chain-logo.png");
+$ninja-bank-logo: url("../../assets/ninja-bank-logo.png");
