@@ -15,7 +15,6 @@ const AddCard = () => {
         cardHolder={formData.name}
         expirationDate={formData.valid}
         vendor={formData.vendor}
-        active={true}
       />
       <Form formData={formData} error={error} handleChange={handleChange} validator={validator} />
     </main>

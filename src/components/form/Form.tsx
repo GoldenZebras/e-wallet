@@ -5,6 +5,7 @@ import { STORAGE_KEY } from '../../constants/StorageKey';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent } from 'react';
 import { FormData } from '../../models/FormData';
+import { selectItems } from '../../constants/SelectItems';
 
 interface FormProps {
   formData: FormData;
@@ -17,25 +18,6 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
   const { addCard } = useLocalStorage(STORAGE_KEY, []);
   const navigate = useNavigate();
 
-  const selectItems = [
-    {
-      value: 'bitcoin',
-      label: 'Bitcoin inc',
-    },
-    {
-      value: 'ninja',
-      label: 'Ninja bank',
-    },
-    {
-      value: 'blockchain',
-      label: 'Block chain inc',
-    },
-    {
-      value: 'evilcorp',
-      label: 'Evil corp',
-    },
-  ];
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const isValid = validator();
@@ -47,6 +29,8 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
         vendor: formData.vendor,
         active: true,
       });
+
+      // lägga till så att man inte blir navigerad om kortet inte läggs till
 
       setTimeout(() => navigate('/'), 750);
     }

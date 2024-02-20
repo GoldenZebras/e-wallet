@@ -15,9 +15,11 @@ const useFormValidator = (): [
     ccv: '',
   };
 
+  //States för hantering av våra värden - Formulärdatan samt felmeddelande
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [error, setError] = useState<string>('');
 
+  // Funktion för hantering av ändringar i formulär
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     if (name !== 'name' && name !== 'vendor' && name !== 'valid') {
@@ -32,10 +34,11 @@ const useFormValidator = (): [
     }
   };
 
+  //Validator för att returnera om det gått bra eller inte att validera formuläret.
   const validator = (): boolean => {
     const valid = validateForm();
     setError(valid);
-    const isValid = valid === '';
+    const isValid: boolean = valid === '';
     return isValid;
   };
 

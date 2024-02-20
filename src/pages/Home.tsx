@@ -11,13 +11,11 @@ const Home = () => {
     STORAGE_KEY,
     CardList
   );
-  console.log('inactiveCards.length', inactiveCards.length);
 
   return (
     <div className="card__container">
       <h1 className="card__container--header">E-wallet</h1>
       <h2 className="card__container--subheader">
-        active card{' '}
         {activeCard ? (
           <button className="card__container--button" onClick={removeCard}>
             Remove card
@@ -31,7 +29,6 @@ const Home = () => {
             cardHolder={activeCard.cardHolder}
             expirationDate={activeCard.expirationDate}
             vendor={activeCard.vendor}
-            active={activeCard.active}
           />
         ) : (
           <p>No active card.</p>
@@ -48,7 +45,6 @@ const Home = () => {
               cardHolder={card.cardHolder}
               expirationDate={card.expirationDate}
               vendor={card.vendor}
-              active={card.active}
             />
           </div>
         ))}
