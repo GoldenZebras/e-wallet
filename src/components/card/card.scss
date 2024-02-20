@@ -1,55 +1,30 @@
+@use "../../sass/" as *;
+
 .card {
-  width: 382px;
-  height: 241px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.12);
-  position: relative;
+  @include card-layout;
+
+  &.bitcoin {
+    @include card-background($bitcoin-color);
+  }
+
+  &.ninja {
+    @include card-background($ninja-vendor-color);
+  }
+
+  &.blockchain {
+    @include card-background($block-chain-inc-color);
+  }
+
+  &.evilcorp {
+    @include card-background($evil-corp-color);
+  }
 
   &.inactive {
     margin-top: -192px;
   }
 
-  &.bitcoin {
-    background: linear-gradient(0deg, #ffae34, #ffae34),
-      linear-gradient(
-        248.04deg,
-        rgba(255, 255, 255, 0.15) 0%,
-        rgba(255, 255, 255, 0) 99.07%
-      );
-  }
-  &.evilcorp {
-    background: linear-gradient(0deg, #f33355, #f33355),
-      linear-gradient(248.3deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%);
-    color: #ffffff;
-  }
-  &.ninja {
-    background: linear-gradient(0deg, #222222, #222222),
-      linear-gradient(
-        248.3deg,
-        rgba(255, 255, 255, 0.15) 0%,
-        rgba(255, 255, 255, 0) 100%
-      );
-    color: #ffffff;
-  }
-  &.blockchain {
-    background: linear-gradient(0deg, #8b58f9, #8b58f9),
-      linear-gradient(
-        248.52deg,
-        rgba(0, 0, 0, 0.15) 1.49%,
-        rgba(0, 0, 0, 0) 100%
-      );
-  }
-
   &__number {
-    font-size: 29px;
-    line-height: 32.48px;
-    position: absolute;
-    height: 42px;
-    width: 350px;
-    top: 120px;
-    left: 16px;
-    display: flex;
-    justify-content: space-between;
+    @include card-number;
   }
 
   &__holder {
@@ -74,13 +49,12 @@
   &__vendor {
     position: absolute;
     background: rgba(255, 255, 255, 0.8);
-
-    &.bitcoin {
-      background-image: url("../../assets/bitcoin-logo.png");
-      background-size: 100px;
-    }
+  }
+  &.bitcoin {
+    background-image: url("../../assets/bitcoin-logo.png");
+    background-size: 100px;
   }
   &.card.placeholder {
-    background: #d0d0d0;
+    background: $add-new-bank-card-color;
   }
 }
