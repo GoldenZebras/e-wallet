@@ -121,12 +121,14 @@
 
 @mixin card-number {
   font-family: $font-family-primary;
-  font-size: 29px;
+  font-size: 26px;
   line-height: 32.48px;
+  font-weight: 400;
   letter-spacing: 2px;
   position: absolute;
   top: 120px;
   left: 24px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24);
 }
 
 @mixin card-holder {
@@ -137,7 +139,7 @@
   top: 180px;
   left: 25px;
   text-transform: uppercase;
-  text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.24);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24);
 }
 
 @mixin card-expiry {
@@ -147,6 +149,7 @@
   position: absolute;
   top: 180px;
   right: 25px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24);
 }
 
 @mixin card-vendor($image-url) {
