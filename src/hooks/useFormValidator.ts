@@ -29,6 +29,8 @@ const useFormValidator = (): [
       value.length === 2 && formData.valid.length !== 3
         ? setFormData({ ...formData, [name]: value + '/' })
         : setFormData({ ...formData, [name]: value });
+    } else if (name == 'name') {
+      if (/^[a-zA-Z\s-]*$/.test(value)) setFormData({ ...formData, [name]: value });
     } else {
       setFormData({ ...formData, [name]: value });
     }
