@@ -1,15 +1,15 @@
 import Card from '../components/card/Card';
-import { CardList } from '../constants/CardList';
+import { InitialCards } from '../constants/InitialCards';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { STORAGE_KEY } from '../constants/StorageKey';
-import { CardProps } from '../models/CardProps';
 import Button from '../components/button/Button';
 import './home.scss';
+import CardList from '../components/list/CardList';
 
 const Home = () => {
-  const { removeCard, setActiveCardFunc, activeCard, inactiveCards } = useLocalStorage(
+  const { removeCard, setActiveCardFunc, activeCard, cards } = useLocalStorage(
     STORAGE_KEY,
-    CardList
+    InitialCards
   );
 
   return (
@@ -24,33 +24,19 @@ const Home = () => {
         ) : null}
       </h2>
       <div className="card__container--activeCard">
-        {activeCard ? (
-          <Card
-            cardNumber={activeCard.cardNumber}
-            cardHolder={activeCard.cardHolder}
-            expirationDate={activeCard.expirationDate}
-            vendor={activeCard.vendor}
-          />
-        ) : (
-          <p>No active card.</p>
-        )}
+        {activeCard ? <Card {...activeCard} /> : <p>No active card.</p>}
       </div>
-      <div className="card__container--list">
-        {inactiveCards?.map((card: CardProps, index: number) => (
-          <div
-            key={index}
-            className={`card__container--list-item-${inactiveCards.length}`}
-            onClick={() => setActiveCardFunc(card.cardNumber)}>
-            <Card
-              cardNumber={card.cardNumber}
-              cardHolder={card.cardHolder}
-              expirationDate={card.expirationDate}
-              vendor={card.vendor}
-            />
-          </div>
-        ))}
-      </div>
-      <Button className="addbutton" title={'Add new card'} filled={false} to={'/addcard'} />
+
+      <CardList
+        onCardClick={(nmbr: string) => setActiveCardFunc(nmbr)}
+        cards={cards}
+      />
+      <Button
+        className="addbutton"
+        title={'Add new card'}
+        filled={false}
+        to={'/addcard'}
+      />
     </div>
   );
 };

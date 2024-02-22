@@ -12,15 +12,20 @@ const AddCard = () => {
   return (
     <main className="main-add-cards">
       <div className="title">Add a new bank card</div>
-      <img src={backbtn} alt="back-btn" className="back-btn" onClick={() => navigate('/')} />
-      <p className="new-card-title">New card</p>
-      <Card
-        cardNumber={formData.cardNumber}
-        cardHolder={formData.name}
-        expirationDate={formData.valid}
-        vendor={formData.vendor}
+      <img
+        src={backbtn}
+        alt="back-btn"
+        className="back-btn"
+        onClick={() => navigate('/')}
       />
-      <Form formData={formData} error={error} handleChange={handleChange} validator={validator} />
+      <p className="new-card-title">New card</p>
+      <Card {...formData} />
+      <Form
+        formData={formData}
+        error={error}
+        handleChange={handleChange}
+        validator={validator}
+      />
     </main>
   );
 };

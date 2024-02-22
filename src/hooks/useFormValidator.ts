@@ -8,9 +8,9 @@ const useFormValidator = (): [
   () => boolean
 ] => {
   const initialFormData: FormData = {
-    name: '',
+    cardHolder: '',
     cardNumber: '',
-    valid: '',
+    expirationDate: '',
     vendor: '',
     ccv: '',
   };
@@ -20,19 +20,34 @@ const useFormValidator = (): [
   const [error, setError] = useState<string>('');
 
   // Funktion för hantering av ändringar i formulär
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    if (name !== 'name' && name !== 'vendor' && name !== 'valid') {
-      const parsedValue = Number(value);
-      !isNaN(parsedValue) && setFormData({ ...formData, [name]: value });
-    } else if (name === 'valid') {
-      value.length === 2 && formData.valid.length !== 3
-        ? setFormData({ ...formData, [name]: value + '/' })
-        : setFormData({ ...formData, [name]: value });
-    } else if (name == 'name') {
-      if (/^[a-zA-Z\s-]*$/.test(value)) setFormData({ ...formData, [name]: value });
-    } else {
-      setFormData({ ...formData, [name]: value });
+
+    const updateFormData = (newValue: string) => {
+      setFormData({ ...formData, [name]: newValue });
+    };
+
+    switch (name) {
+      case 'expirationDate':
+        value.length === 2 && formData.expirationDate.length !== 3
+          ? updateFormData(value + '/')
+          : updateFormData(value);
+        break;
+
+      case 'cardHolder':
+        if (/^[a-zA-Z\s-]*$/.test(value)) updateFormData(value);
+        break;
+
+      case 'vendor':
+        updateFormData(value);
+        break;
+
+      default:
+        const parsedValue = Number(value);
+        if (!isNaN(parsedValue)) updateFormData(value);
+        break;
     }
   };
 
@@ -45,7 +60,7 @@ const useFormValidator = (): [
   };
 
   const validateForm = () => {
-    const [firstname, lastname] = formData.name.split(' ');
+    const [firstname, lastname] = formData.cardHolder.split(' ');
 
     if (!firstname || !lastname) {
       return 'Fullname is required';
@@ -55,16 +70,16 @@ const useFormValidator = (): [
       return 'Card number is required, 16 digits';
     }
 
-    if (!formData.valid.trim()) {
+    if (!formData.expirationDate.trim()) {
       return 'Valid Thru is required';
     } else {
-      const [month, year] = formData.valid.split('/');
+      const [month, year] = formData.expirationDate.split('/');
 
       if (Number(month) > 12) {
         return 'Month cannot be higher than 12';
       } else if (Number(year) < 24) {
         return 'Year cannot be lower than the current year';
-      } else if (!/^\d{2}\/\d{2}$/.test(formData.valid)) {
+      } else if (!/^\d{2}\/\d{2}$/.test(formData.expirationDate)) {
         return 'Valid Thru must be in the format mm/yy';
       }
     }

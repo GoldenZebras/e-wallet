@@ -1,6 +1,6 @@
 import { CardProps } from '../models/CardProps';
 
-export const CardList: CardProps[] = [
+export const InitialCards: CardProps[] = [
   {
     cardNumber: '1239761345121333',
     cardHolder: 'FÖRNAMN EFTERNAMN',

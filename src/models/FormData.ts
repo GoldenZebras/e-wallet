@@ -1,7 +1,7 @@
 export type FormData = {
-  name: string;
+  cardHolder: string;
   cardNumber: string;
-  valid: string;
+  expirationDate: string;
   ccv: string;
   vendor: string;
 };

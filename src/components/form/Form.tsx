@@ -14,7 +14,12 @@ interface FormProps {
   validator: () => boolean;
 }
 
-const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator }) => {
+const Form: React.FC<FormProps> = ({
+  formData,
+  error,
+  handleChange,
+  validator,
+}) => {
   const { addCard } = useLocalStorage(STORAGE_KEY, []);
   const navigate = useNavigate();
 
@@ -24,10 +29,7 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
     const isValid = validator();
     if (isValid) {
       const success = addCard({
-        cardNumber: formData.cardNumber,
-        cardHolder: formData.name,
-        expirationDate: formData.valid,
-        vendor: formData.vendor,
+        ...formData,
         active: true,
       });
 
@@ -51,8 +53,8 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
       <label className="form-subtitles">Cardholder name</label>
       <input
         type="text"
-        name="name"
-        value={formData.name}
+        name="cardHolder"
+        value={formData.cardHolder}
         placeholder="FIRSTNAME LASTNAME"
         className="input"
         onChange={(e) => handleChange(e)}
@@ -66,8 +68,8 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
             type="text"
             className="input v-c"
             placeholder="MM/YY"
-            value={formData.valid}
-            name="valid"
+            value={formData.expirationDate}
+            name="expirationDate"
             onChange={(e) => handleChange(e)}
             maxLength={5}
           />
@@ -94,7 +96,10 @@ const Form: React.FC<FormProps> = ({ formData, error, handleChange, validator })
         defaultValue={''}>
         <option value="" disabled hidden></option>
         {selectItems.map((item, index) => (
-          <option key={index} value={item.value} className={`option ${item.value}`}>
+          <option
+            key={index}
+            value={item.value}
+            className={`option ${item.value}`}>
             {item.label}
           </option>
         ))}
