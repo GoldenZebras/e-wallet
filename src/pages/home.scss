@@ -38,33 +38,6 @@
         height: 15.063rem;
         font-family: $font-family-primary;
     }
-
-    &--list {
-        $listHeight: 21.25rem;
-        border-radius: 0.5rem 0.5rem 0 0;
-        height: $listHeight;
-        width: 25.875rem;
-        overflow-y: hidden; 
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    
-
-        @for $cards from 1 through 10 {
-            &-item-#{$cards} {
-                $totalMargin: if($cards > 1, ($listHeight - 15.063rem * $cards) / ($cards - 1), 0);
-    
-                    flex-shrink: 0;
-                    
-                    @for $n from 1 through $cards {
-                        &:nth-child(#{$n}) {
-                            margin-top: if($n == 1, 0, $totalMargin);
-                        }
-                    }
-            }
-        }
-    }
 }
 
 
