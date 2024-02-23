@@ -22,7 +22,7 @@ const CardList: React.FC<CardListProps> = ({ cards, onCardClick }) => {
       {listOfCards?.map((card: CardProps, index: number) => (
         <div
           key={index}
-          className={`card__container--list-item-${cards.length}`}
+          className={`card__container--list-item-${listOfCards.length}`}
           onClick={() => onCardClick(card.cardNumber)}>
           <Card {...card} />
         </div>
